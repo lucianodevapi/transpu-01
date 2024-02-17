@@ -1,0 +1,21 @@
+
+# ms-company: 8001 - ms-info: 8002 - ms-user: 8003 - ms-payment: 8004
+server:
+  port: ${PORT:8002}
+
+spring:
+  application:
+    name: ms-info
+
+  data:
+    mongodb:
+      uri: mongodb+srv://admin-transpu:1978StartupTranspu@startup.suenepf.mongodb.net/?retryWrites=true&w=majority
+      database: db-transpu-info
+      auto-index-creation: true
+
+jwt:
+  url: '/authorization'
+  header: 'Authorization'
+  prefix: 'Bearer '
+  expiration: 86400000
+  secret: '66546A576E5A7234743777217A25432A462D4A614E645267556B587032733576'

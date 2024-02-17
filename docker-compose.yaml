@@ -1,0 +1,49 @@
+version: "3.9"
+
+services:
+
+  ms-company:
+    #build:
+      #context: ./
+      #dockerfile: /ms-company/Dockerfile
+    image: lucianodevapi/transpu-company-01:1.0.0
+    container_name: ms-company
+    ports:
+      - "8001:8001"
+    environment:
+      PORT: 8001
+    networks:
+      - transpu
+    restart: always
+
+  ms-info:
+    #build:
+    #context: ./
+    #dockerfile: /ms-company/Dockerfile
+    image: lucianodevapi/transpu-info-01:1.0.0
+    container_name: ms-info
+    ports:
+      - "8002:8002"
+    environment:
+      PORT: 8002
+    networks:
+      - transpu
+    restart: always
+
+  ms-user:
+    #build:
+    #context: ./
+    #dockerfile: /ms-company/Dockerfile
+    image: lucianodevapi/transpu-user-01:1.0.0
+    container_name: ms-user
+    ports:
+      - "8003:8003"
+    environment:
+      PORT: 8003
+    networks:
+      - transpu
+    restart: always
+
+networks:
+  transpu:
+    driver: bridge
